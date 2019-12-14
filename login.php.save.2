@@ -1,0 +1,35 @@
+
+<?php 
+
+echo "hello this is login php page<br>";
+/*
+ $host="localhost";
+ $user="root";
+ $password="sachin";
+ $db="login";
+
+$con = new mysqli_connect('$host','$user','$password','$db');
+*/
+
+$con =mysqli_connect('localhost','root','sachin','us($con); die;
+  if($con==1){
+  echo"connected";
+}
+ else
+{
+echo"not connected";
+}
+
+$name= $_POST['username'];
+$email= $_POST['email'];
+$password= $_POST['password'];
+/*
+$query= "INSERT INTO LOGINDATA('NAME','EMAIL','PASSWORD') VALUES('$name','$email','$password')";
+ 
+$run = mysqli_query($con,$query);
+
+if($run==TURE)
+  echo="data insert successsfully";
+else 
+  echo "Error  ...!";*/ 
+?>

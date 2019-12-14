@@ -1,0 +1,23 @@
+<?php 
+
+echo "hello this is login php page<br>";
+
+$con=mysqli_connect('localhost', 'root', 'sachin','login');
+
+
+
+
+echo $_POST['username'];
+$email=$_POST['email'];
+$password=$_POST['password'];
+
+$query="INSERT INTO LOGINDATA VALUES('$name','$email','password')";
+
+$run = mysqli_query($con,$query);
+
+if($run==TURE)
+  echo="data inset successsfully";
+else 
+  echo "Error  ...!"; 
+*/
+?>

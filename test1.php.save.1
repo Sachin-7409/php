@@ -1,0 +1,45 @@
+
+<?php echo '<center><b>this is web using php</center></b><br> ';
+$value=25;
+
+
+$value=($value*8);
+
+echo"result of 25*8 is = ".$value."<br>" ; // this is concatination symbol (.) joint to value
+echo '"here is google link"<a href="http://www.google.com">Google</a><br>'; // you can also use this"/ "hello"/" for "hello" output
+
+
+$number1='10';
+$number2=10;
+
+if ($number1==$number2){                           // this (===) operator compaire variable type
+                                                   // this (==) operator not compaire variale type 
+echo $number1 ."is equal to".$number2."<br>";
+
+echo"here first 10 is a  string value  and  second  10 int value<br><br>";
+}
+
+else {
+echo $number1."not equal to".$number2."<br><br>";
+
+}
+
+echo "<b>This is array  program and foreach loop<br></b>";
+
+$names=array('sachin','jhon','Tom','patran');
+
+foreach($names as $name)
+{
+echo $name."<br>";
+}
+
+echo "<br><br><b> This is mulidimentional array program<bR></b>";
+
+$students=array(array('name'=>'sachin','age'=>'22','roll'=>'02'),
+           array('name'=>'rohit','age'=>'20','roll'=>'03'),
+           array('name'=>'lalit','age'=>'22','roll'=>'04'));
+
+foreach ($students as $student=>$){
+echo$student.'<br>';
+}
+?>

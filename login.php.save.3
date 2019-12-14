@@ -1,0 +1,33 @@
+
+<?php 
+
+echo "hello this is login php page<br>";
+
+$dsn="mysql:host=localhost; dbname=login;";
+$db_user="root";
+$db_password="sachin";
+
+try{
+
+// database connection
+$con=mysqli_connect(');
+
+}
+catch(PDOException $e){
+echo="Connection Falied";
+}
+
+$name= $_POST['username'];
+$email=$_POST['email'];
+$password= $_POST['password'];
+
+$query= "INSERT INTO LOGINDATA('NAME','EMAIL','PASSWORD') VALUES($name,email,password)";
+ 
+$run = mysqli_query($con,$query);
+
+if($run==TURE)
+  echo="data inset successsfully";
+else 
+  echo "Error  ...!"; 
+
+?>

@@ -1,0 +1,130 @@
+
+<?php
+include("example2.php");
+echo" this php programs<br>";
+echo"hello word";
+$value1=10;
+$value=10;
+
+if($value1 === $value){
+echo "<br>true";
+}
+else
+echo"<br>false<br>";
+
+$num=array();
+$num[0]=1000;
+$num[1]=2000;
+echo $num."<br>";
+echo "double array<br>";
+$num1 =array();
+
+$num1[0]=array(0,1,2,3,4,5);
+$num1[1]=array(1,2,3,4,5,6,7);
+
+for($j=0;$j<1;$j++){
+echo"<pre>";
+print_r($num1);
+echo"<pre>";}
+
+function add(){
+$n1=10;
+$n2=20;
+$sum=$n1+$n2;
+echo "<B>sum is:</B>".$sum;
+}
+
+// FOR EACH LOOP
+
+echo"<br> FOREACH LOOP<BR>";
+
+$name=array("sachin","lalit","trilok","lucky");
+ foreach($name as $key=>$v){
+ echo $key."=>".$v."<br>";
+}
+
+//GLOBAL VARAIBLE AND FUNCTION
+
+echo "</br>";
+  $firstname="sachin";
+  $middlename="singh";
+  $lastname="bisht";
+
+function name(){
+global $firstname;
+echo "<br>".$firstname;
+}
+
+function name1(){
+echo " ".$GLOBALS['middlename']." ".$GLOBALS['lastname'];
+  }
+echo "<B>SUPER  GLOBAL VARIABLE OR ARRAY</B><BR>";
+echo "SERVER<br> ".$_SERVER["HTTP_HOST"];
+echo "SERVER USER<BR>".$_SERVER["HTTP_USER_AGENT"];
+echo "SERVER NAME <br>".$_SERVER["SERVER_NAME"];
+  
+//SEESION CODING
+session_start();
+if (isset($_SESSION["uname"])){
+echo "<h2 align='center'> You are login </h2>";
+exit();
+}
+
+// cookies programs
+
+$value="<b>COOKIE:->hello sachin singh bisht</b>";
+$exp= time() + 86400; // 86400 is sec in day
+setcookie("name",$value,$exp);
+
+echo "<br>". $_COOKIE['name'];
+
+$unsetcookie=time()-86400;
+
+//setcookie("name","",$unsetcookie);
+
+
+$email_a='scbofn@com';
+   if(filter_var($email_a,FILTER_SANITIZE_EMAIL)){
+
+echo "this correct";
+
+else 
+echo "this is  incorrect";
+
+?>
+<html>
+<head>
+</head>
+<body>
+<?php add(); ?>
+<?php name(); ?>
+<?php name1(); ?>
+
+<h3 align="center"> Example of $_Seesion </h3>
+
+<form method="post">
+  <table align="center">
+    <tr><td>UserName:</td>
+      <td><input type="text" name="username"></td>
+     </tr>
+    <tr><td>Password:</td>
+      <td><input type="password" name="passowrd"</td>
+     <//tr>
+     <tr><td colspan="2" align="center"><a href="exa.php"><input type="submit" name="submit"></td>
+</table>
+</form>
+</body>
+</html>
+
+
+
+<?php
+
+if(isset($_POST['submit'])){
+
+$_SESSION["uname"]=$_POST["username"];
+
+header('location:exa.php');
+
+}
+?>
